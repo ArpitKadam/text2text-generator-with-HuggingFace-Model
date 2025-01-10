@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text2Text Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem auto;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        textarea, input[type="submit"] {
+            width: 100%;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+        }
+        textarea {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text2Text Generation</h1>
+    <form method="post" action="/generate">
+        <label for="text">Enter your prompt:</label>
+        <textarea id="text" name="text" required>{{ input_text | default('') }}</textarea>
+        <input type="submit" value="Generate">
+    </form>
+
+    {% if generated_text %}
+    <h2>Generated Text</h2>
+    <p>{{ generated_text }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+requests
+sentencepiece
+torch
+jinja2
+fastapi==0.75.0
+uvicorn==0.17.0
+transformers==4.15.0
